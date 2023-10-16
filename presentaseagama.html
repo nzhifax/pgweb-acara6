@@ -34,7 +34,9 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="jumlahpenduduk.html">Jumlah Penduduk</a></li>
                             <li><a class="dropdown-item" href="presentaseagama.html">Presentase Agama</a></li>
-                            <li><a class="dropdown-item" href="index.html">Kondisi Jalan</a></li>
+                            <li><a class="dropdown-item" href="kondisijalan.html">Kondisi Jalan</a></li>
+                            <li><a class="dropdown-item" href="peternakan.html">Produksi Peternakan dan Perikanan</a></li>
+                            <li><a class="dropdown-item" href="faspend.html">Jumlah Fasilitas Pendidikan</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -89,7 +91,7 @@
                         var options = {
                             series: [{
                                 name: 'Islam',
-                                data: [ 3.36, 3.45, 3.24, 3.79, 4.10, 5.47, 6.71, 6.25, 6.88, 4.36, 5.28, 5.67, 11.54, 10.61, 10.52, 3.91, 4.88]
+                                data: [3.36, 3.45, 3.24, 3.79, 4.10, 5.47, 6.71, 6.25, 6.88, 4.36, 5.28, 5.67, 11.54, 10.61, 10.52, 3.91, 4.88]
                             },
                             {
                                 name: 'Protestan',
@@ -111,7 +113,7 @@
                                 name: 'Lainnya',
                                 data: [0.00, 0.00, 2.94, 0.00, 2.94, 11.76, 5.88, 8.82, 2.94, 5.88, 0.00, 2.94, 8.82, 17.65, 23.53, 5.88, 0.00]
                             }
-                        ],
+                            ],
                             chart: {
                                 type: 'bar',
                                 height: 350
@@ -120,42 +122,42 @@
                                 bar: {
                                     horizontal: false,
                                     columnWidth: '55%',
-                                    endingShape: 'rounded',
-                                    dataLabels: {
-                                        position: 'top',
-                                    }
+                                    endingShape: 'rounded'
                                 },
                             },
+                            dataLabels: {
+                                enabled: false
+                            },
                             stroke: {
-                                show: true,
-                                width: 2,
-                                colors: ['transparent']
-                            },
-                            xaxis: {
-                                categories: ['Srandakan', 'Sanden', 'Kretek', 'Pundong', 'Bambanglipuro', 'Pandak', 'Bantul', 'Jetis', 'Imogiri', 'Dlingo', 'Pleret', 'Piyungan', 'Banguntapan', 'Sewon', 'Kasihan', 'Pajangan', 'Sedayu'],
-                                title: {
-                                    text: 'Kecamatan'
-                                }
-                            },
-                            yaxis: {
-                                title: {
-                                    text: 'Jiwa'
-                                }
-                            },
-                            fill: {
-                                opacity: 1
-                            },
-                            tooltip: {
-                                y: {
-                                    formatter: function (val) {
-                                        return val + " %"
+                                    show: true,
+                                    width: 2,
+                                    colors: ['transparent']
+                                },
+                                xaxis: {
+                                    categories: ['Srandakan', 'Sanden', 'Kretek', 'Pundong', 'Bambanglipuro', 'Pandak', 'Bantul', 'Jetis', 'Imogiri', 'Dlingo', 'Pleret', 'Piyungan', 'Banguntapan', 'Sewon', 'Kasihan', 'Pajangan', 'Sedayu'],
+                                    title: {
+                                        text: 'Kecamatan'
                                     }
-                                }
-                            },
-                                };
+                                },
+                                yaxis: {
+                                    title: {
+                                        text: 'presentase'
+                                    }
+                                },
+                                fill: {
+                                    opacity: 1
+                                },
+                                tooltip: {
+                                    y: {
+                                        formatter: function (val) {
+                                            return val + " %"
+                                        }
+                                    }
+                                },
+                            };
 
-                        var chart = new ApexCharts(document.querySelector("#chart"), options);
-                        chart.render();
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
                     </script>
 </body>
 

@@ -35,7 +35,8 @@
                             <li><a class="dropdown-item" href="jumlahpenduduk.html">Jumlah Penduduk</a></li>
                             <li><a class="dropdown-item" href="presentaseagama.html">Presentase Agama</a></li>
                             <li><a class="dropdown-item" href="kondisijalan.html">Kondisi Jalan</a></li>
-                            <li><a class="dropdown-item" href="peternakan.html">Produksi Peternakan dan Perikanan</a></li>
+                            <li><a class="dropdown-item" href="peternakan.html">Produksi Peternakan dan Perikanan</a>
+                            </li>
                             <li><a class="dropdown-item" href="faspend.html">Jumlah Fasilitas Pendidikan</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -54,7 +55,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h5>Jumlah Fasilitas Pendidikan</h5>
+                <h5>Produksi Peternakan dan Perikanan</h5>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -88,60 +89,28 @@
                         integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA=="
                         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                     <script>
+
                         var options = {
-                            series: [75, 62, 33, 31, 15],
+                            series: [73.058, 90.887, 100.121, 120.851],
                             chart: {
-                                height: 390,
-                                type: 'radialBar',
+                                type: 'polarArea',
                             },
-                            plotOptions: {
-                                radialBar: {
-                                    offsetY: 0,
-                                    startAngle: 0,
-                                    endAngle: 270,
-                                    hollow: {
-                                        margin: 5,
-                                        size: '30%',
-                                        background: 'transparent',
-                                        image: undefined,
-                                    },
-                                    dataLabels: {
-                                        name: {
-                                            show: false,
-                                        },
-                                        value: {
-                                            show: false,
-                                        }
-                                    }
-                                }
+                            colors: ["#253528", "#49654e", "#8ba888", "#9ca384"],
+                            labels: ['Sapi Potong', 'Kambing', 'Ayam Ras Potong', 'Ikan'],
+                            stroke: {
+                                colors: ['#fff']
                             },
-                            colors: ["#253528", "#49654e", "#8ba888", "#9ca384", "#c0cfb2"],
-                            labels: ['SD', 'SMP', 'SMA', 'SMK', 'Perguruan Tinggi'],
-                            legend: {
-                                show: true,
-                                floating: true,
-                                fontSize: '16px',
-                                position: 'left',
-                                offsetX: 160,
-                                offsetY: 15,
-                                labels: {
-                                    useSeriesColors: true,
-                                },
-                                markers: {
-                                    size: 0
-                                },
-                                formatter: function (seriesName, opts) {
-                                    return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
-                                },
-                                itemMargin: {
-                                    vertical: 3
-                                }
+                            fill: {
+                                opacity: 0.8
                             },
                             responsive: [{
                                 breakpoint: 480,
                                 options: {
+                                    chart: {
+                                        width: 200
+                                    },
                                     legend: {
-                                        show: false
+                                        position: 'bottom'
                                     }
                                 }
                             }]

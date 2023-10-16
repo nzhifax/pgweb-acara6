@@ -54,7 +54,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h5>Jumlah Fasilitas Pendidikan</h5>
+                <h5>Kondisi Jalan</h5>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -89,59 +89,20 @@
                         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                     <script>
                         var options = {
-                            series: [75, 62, 33, 31, 15],
+                            series: [44, 55, 41, 17],
                             chart: {
-                                height: 390,
-                                type: 'radialBar',
+                                type: 'donut',
+                                width: 500
                             },
-                            plotOptions: {
-                                radialBar: {
-                                    offsetY: 0,
-                                    startAngle: 0,
-                                    endAngle: 270,
-                                    hollow: {
-                                        margin: 5,
-                                        size: '30%',
-                                        background: 'transparent',
-                                        image: undefined,
-                                    },
-                                    dataLabels: {
-                                        name: {
-                                            show: false,
-                                        },
-                                        value: {
-                                            show: false,
-                                        }
-                                    }
-                                }
-                            },
-                            colors: ["#253528", "#49654e", "#8ba888", "#9ca384", "#c0cfb2"],
-                            labels: ['SD', 'SMP', 'SMA', 'SMK', 'Perguruan Tinggi'],
-                            legend: {
-                                show: true,
-                                floating: true,
-                                fontSize: '16px',
-                                position: 'left',
-                                offsetX: 160,
-                                offsetY: 15,
-                                labels: {
-                                    useSeriesColors: true,
-                                },
-                                markers: {
-                                    size: 0
-                                },
-                                formatter: function (seriesName, opts) {
-                                    return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
-                                },
-                                itemMargin: {
-                                    vertical: 3
-                                }
-                            },
+                            labels: ["Baik/Good", "Sedang/Moderate", "Rusak/Damage", "Rusak Berat/Severely Damage"],
                             responsive: [{
                                 breakpoint: 480,
                                 options: {
+                                    chart: {
+                                        width: 200
+                                    },
                                     legend: {
-                                        show: false
+                                        position: 'bottom'
                                     }
                                 }
                             }]
